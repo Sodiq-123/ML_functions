@@ -50,6 +50,6 @@ def model_predict(w, b, X, Y, learning_rate, no_iterations):
 def predict(final_pred, m):
     y_pred = np.zeros((1,m))
     for i in range(final_pred.shape[1]):
-        if final_pred[0][i] > 0.5:
-            y_pred[0][i] = 1
+        y_pred[0][i] = 1 if final_pred[0][i] > 0.5
+        
     return y_pred
